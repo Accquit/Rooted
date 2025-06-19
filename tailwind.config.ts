@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -20,50 +19,94 @@ export default {
 		},
 		extend: {
 			colors: {
-				border: 'hsl(var(--border))',
-				input: 'hsl(var(--input))',
-				ring: 'hsl(var(--ring))',
-				background: 'hsl(var(--background))',
-				foreground: 'hsl(var(--foreground))',
+				border: {
+					DEFAULT: '#E5E7EB',
+					dark: 'hsl(var(--border))',
+				},
+				input: {
+					DEFAULT: '#E5E7EB',
+					dark: 'hsl(var(--input))',
+				},
+				ring: {
+					DEFAULT: '#2E7D32',
+					dark: 'hsl(var(--ring))',
+				},
+				background: {
+					DEFAULT: '#FFFFFF',
+					dark: 'hsl(var(--background))',
+				},
+				foreground: {
+					DEFAULT: '#22223A',
+					dark: 'hsl(var(--foreground))',
+				},
 				primary: {
 					DEFAULT: '#2E7D32',
-					foreground: '#ffffff'
+					foreground: '#ffffff',
+					dark: 'hsl(var(--primary))',
+					'dark-foreground': 'hsl(var(--primary-foreground))',
 				},
 				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
+					DEFAULT: '#E6EFE9',
+					foreground: '#2E7D32',
+					dark: 'hsl(var(--secondary))',
+					'dark-foreground': 'hsl(var(--secondary-foreground))',
 				},
 				destructive: {
-					DEFAULT: 'hsl(var(--destructive))',
-					foreground: 'hsl(var(--destructive-foreground))'
+					DEFAULT: '#EF4444',
+					foreground: '#ffffff',
+					dark: 'hsl(var(--destructive))',
+					'dark-foreground': 'hsl(var(--destructive-foreground))',
 				},
 				muted: {
-					DEFAULT: 'hsl(var(--muted))',
-					foreground: 'hsl(var(--muted-foreground))'
+					DEFAULT: '#F3F4F6',
+					foreground: '#6B7280',
+					dark: 'hsl(var(--muted))',
+					'dark-foreground': 'hsl(var(--muted-foreground))',
 				},
 				accent: {
 					DEFAULT: '#8D6E63',
-					foreground: '#ffffff'
+					foreground: '#ffffff',
+					dark: 'hsl(var(--accent))',
+					'dark-foreground': 'hsl(var(--accent-foreground))',
 				},
 				popover: {
-					DEFAULT: 'hsl(var(--popover))',
-					foreground: 'hsl(var(--popover-foreground))'
+					DEFAULT: '#FFFFFF',
+					foreground: '#22223A',
+					dark: 'hsl(var(--popover))',
+					'dark-foreground': 'hsl(var(--popover-foreground))',
 				},
 				card: {
-					DEFAULT: 'hsl(var(--card))',
-					foreground: 'hsl(var(--card-foreground))'
+					DEFAULT: '#FFFFFF',
+					foreground: '#22223A',
+					dark: 'hsl(var(--card))',
+					'dark-foreground': 'hsl(var(--card-foreground))',
 				},
 				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
+					DEFAULT: '#F9FAFB',
+					foreground: '#22223A',
+					dark: 'hsl(var(--sidebar-background))',
+					'dark-foreground': 'hsl(var(--sidebar-foreground))',
+					primary: {
+						DEFAULT: '#2E7D32',
+						dark: 'hsl(var(--sidebar-primary))',
+					},
+					accent: {
+						DEFAULT: '#8D6E63',
+						dark: 'hsl(var(--sidebar-accent))',
+					},
+					border: {
+						DEFAULT: '#E5E7EB',
+						dark: 'hsl(var(--sidebar-border))',
+					},
+					ring: {
+						DEFAULT: '#2E7D32',
+						dark: 'hsl(var(--sidebar-ring))',
+					},
 				},
-				mint: '#E6EFE9'
+				mint: {
+					DEFAULT: '#E6EFE9',
+					dark: 'hsl(var(--accent))',
+				},
 			},
 			fontFamily: {
 				'serif': ['DM Serif Display', 'serif'],

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
@@ -64,9 +63,9 @@ const Blog = () => {
 
   return (
     <Layout>
-      <div className="min-h-screen bg-mint/10">
+      <div className="min-h-screen bg-mint/10 dark:bg-gray-900">
         {/* Header */}
-        <div className="bg-gradient-to-r from-primary to-accent text-white py-16">
+        <div className="bg-gradient-to-r from-primary to-accent text-white dark:from-gray-900 dark:to-gray-800 dark:text-white py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Leaf className="h-16 w-16 mx-auto mb-6 animate-float" />
             <h1 className="font-serif text-4xl lg:text-5xl font-semibold mb-4">
@@ -86,7 +85,7 @@ const Blog = () => {
               <Badge
                 key={category}
                 variant={category === "All" ? "default" : "outline"}
-                className="px-4 py-2 cursor-pointer hover:bg-primary hover:text-white transition-colors"
+                className="px-4 py-2 cursor-pointer hover:bg-primary hover:text-white dark:hover:bg-gray-800 dark:hover:text-white transition-colors"
               >
                 {category}
               </Badge>

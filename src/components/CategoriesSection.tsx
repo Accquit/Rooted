@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Leaf } from 'lucide-react';
@@ -32,14 +31,14 @@ const CategoriesSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <Leaf className="h-12 w-12 text-primary mx-auto mb-6 animate-float" />
-          <h2 className="font-serif text-4xl lg:text-5xl text-primary mb-6">
+          <Leaf className="h-12 w-12 text-primary dark:text-[#F8F8F2] mx-auto mb-6 animate-float" />
+          <h2 className="font-serif text-4xl lg:text-5xl text-primary dark:text-white mb-6">
             Discover by Energy
           </h2>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-700 dark:text-[#F8F8F2] max-w-2xl mx-auto">
             Each plant carries its own unique energy. Browse our curated collections 
             based on the vibes you want to cultivate in your space.
           </p>

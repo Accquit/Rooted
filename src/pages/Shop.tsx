@@ -5,7 +5,12 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Filter, Grid, List, Heart, ShoppingBag } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { useCart } from '@/components/cart/CartContext';
 
+// Add INR formatter
+const formatINR = (amount: number) => {
+  return amount.toLocaleString('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 });
+};
 
 const Shop = () => {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
@@ -18,6 +23,7 @@ const Shop = () => {
   const [selectedPlant, setSelectedPlant] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { toast } = useToast();
+  const { addToCart } = useCart();
 
   const plants = [
     {
@@ -169,6 +175,141 @@ const Shop = () => {
       difficulty: "",
       care: "Machine washable cord. Ceramic pot included.",
       benefits: ["Saves space", "Creates vertical gardens", "Bohemian spiritual vibe"]
+    },
+    {
+      id: 11,
+      name: "Fern",
+      scientificName: "",
+      price: 35,
+      image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=400&fit=crop&crop=center",
+      light: "",
+      energy: "Calming",
+      type: "Hanging",
+      category: "plants",
+      description: "Clears negativity, brings peace.",
+      difficulty: "",
+      care: "Indirect light, Keep soil moist.",
+      benefits: ["Absorbs negative energies", "Symbol of new beginnings", "Enhances tranquility in space"]
+    },
+    {
+      id: 12,
+      name: "Calathea",
+      scientificName: "",
+      price: 32,
+      image: "https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=400&h=400&fit=crop&crop=center",
+      light: "Bright Indirect",
+      energy: "Reflective",
+      type: "Succulent",
+      category: "plants",
+      description: "Aligns emotions, adds harmony.",
+      difficulty: "Easy",
+      care: "Bright, indirect light. Keep soil lightly moist.",
+      benefits: ["Brings calm and focus", "Known as a prayer plant (folds at night)", "Promotes balance and inner peace"]
+    },
+    {
+      id: 13,
+      name: "Maranta",
+      scientificName: "",
+      price: 32,
+      image: "https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=400&h=400&fit=crop&crop=center",
+      light: "Bright Indirect",
+      energy: "Reflective",
+      type: "Succulent",
+      category: "plants",
+      description: "Aligns emotions, adds harmony.",
+      difficulty: "Easy",
+      care: "Medium indirect light. Keep soil damp.",
+      benefits: ["Mimics spiritual cycles (opens/closes leaves)", "Promotes mindfulness", "Calms anxious energy"]
+    },
+    {
+      id: 14,
+      name: "Fittonia",
+      scientificName: "",
+      price: 32,
+      image: "https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=400&h=400&fit=crop&crop=center",
+      light: "Bright Indirect",
+      energy: "Reflective",
+      type: "Succulent",
+      category: "plants",
+      description: "Aligns emotions, adds harmony.",
+      difficulty: "Easy",
+      care: "Low to medium light. Water when topsoil is dry.",
+      benefits: ["Uplifts mental clarity", "Promotes emotional expression", "Energizes indoor spaces"]
+    },
+    {
+      id: 15,
+      name: "Aloe Vera",
+      scientificName: "",
+      price: 32,
+      image: "https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=400&h=400&fit=crop&crop=center",
+      light: "Bright Indirect",
+      energy: "Reflective",
+      type: "Succulent",
+      category: "plants",
+      description: "Aligns emotions, adds harmony.",
+      difficulty: "Easy",
+      care: "Bright, direct light. Let soil dry out between watering.",
+      benefits: ["Removes bad energy", "Healing aura enhancer", "Protection charm in homes"]
+    },
+    {
+      id: 16,
+      name: "Aloe Vera",
+      scientificName: "",
+      price: 32,
+      image: "https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=400&h=400&fit=crop&crop=center",
+      light: "Bright Indirect",
+      energy: "Reflective",
+      type: "Succulent",
+      category: "plants",
+      description: "Aligns emotions, adds harmony.",
+      difficulty: "Easy",
+      care: "Low to bright light. Water only when soil is dry.",
+      benefits: ["Attracts prosperity", "Absorbs stagnant energies", "Enhances grounding energy"]
+    },
+    {
+      id: 17,
+      name: "Money Plant",
+      scientificName: "Pothos",
+      price: 32,
+      image: "https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=400&h=400&fit=crop&crop=center",
+      light: "Bright Indirect",
+      energy: "Reflective",
+      type: "Succulent",
+      category: "plants",
+      description: "Aligns emotions, adds harmony.",
+      difficulty: "Easy",
+      care: "Low to medium light. Water when dry.",
+      benefits: ["Attracts wealth and positivity", "Clears stagnant energy", "Boosts personal development"]
+    },
+    {
+      id: 18,
+      name: "Spider Plant",
+      scientificName: "",
+      price: 32,
+      image: "https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=400&h=400&fit=crop&crop=center",
+      light: "Bright Indirect",
+      energy: "Reflective",
+      type: "Succulent",
+      category: "plants",
+      description: "Aligns emotions, adds harmony.",
+      difficulty: "Easy",
+      care: "Bright, indirect light. Let soil dry between watering.",
+      benefits: ["Cleanses indoor energy", "Brings renewal and hope", "Protects from negative auras"]
+    },
+    {
+      id: 19,
+      name: "Philodendron",
+      scientificName: "",
+      price: 32,
+      image: "https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=400&h=400&fit=crop&crop=center",
+      light: "Bright Indirect",
+      energy: "Nurturing",
+      type: "Succulent",
+      category: "plants",
+      description: "Aligns emotions, adds harmony.",
+      difficulty: "Easy",
+      care: "Bright, indirect light. Allow top inch of soil to dry.",
+      benefits: ["Enhances heart chakra energy", "Promotes emotional healing", "Brings in grounding energy"]
     }
   ];
 
@@ -208,19 +349,6 @@ const Shop = () => {
   const openProductModal = (plant: any) => {
     setSelectedPlant(plant);
     setIsModalOpen(true);
-  };
-
-  const handleAddToCart = (plant: any, customization?: any) => {
-    let cartMessage = `${plant.name} has been added to your cart.`;
-    
-    if (customization) {
-      cartMessage += ` Customized with ${customization.color} color and ${customization.material} material.`;
-    }
-    
-    toast({
-      title: "Added to Sacred Collection!",
-      description: cartMessage,
-    });
   };
 
   return (
@@ -401,12 +529,17 @@ const Shop = () => {
                       <p className="text-gray-600 text-sm mb-4">{plant.description}</p>
                       
                       <div className="flex items-center justify-between">
-                        <span className="text-2xl font-bold text-primary">${plant.price}</span>
+                        <span className="text-2xl font-bold text-primary">{formatINR(plant.price)}</span>
                         <Button 
                           className="bg-primary hover:bg-primary/90"
                           onClick={(e) => {
                             e.stopPropagation();
-                            handleAddToCart(plant);
+                            addToCart({
+                              id: plant.id,
+                              name: plant.name,
+                              price: plant.price,
+                              image: plant.image
+                            });
                           }}
                         >
                           <ShoppingBag className="h-4 w-4 mr-2" />
@@ -435,7 +568,12 @@ const Shop = () => {
         plant={selectedPlant}
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        onAddToCart={handleAddToCart}
+        onAddToCart={(plant, customization) => addToCart({
+          id: plant.id,
+          name: plant.name,
+          price: customization ? plant.price + (customization.priceAdjustment || 0) : plant.price,
+          image: plant.image
+        }, customization)}
       />
     </Layout>
   );

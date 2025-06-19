@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Layout from '@/components/Layout';
@@ -60,17 +59,17 @@ const Auth = () => {
 
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-mint/30 to-white flex items-center justify-center py-12 px-4">
+      <div className="min-h-screen bg-gradient-to-br from-mint/30 to-white dark:from-gray-900 dark:to-gray-800 flex items-center justify-center py-12 px-4">
         <div className="max-w-md w-full">
           {/* Header */}
           <div className="text-center mb-8">
             <div className="flex justify-center mb-4">
               <Leaf className="h-12 w-12 text-primary animate-float" />
             </div>
-            <h1 className="font-serif text-3xl text-primary mb-2">
+            <h1 className="font-serif text-3xl text-primary dark:text-white mb-2">
               {isLogin ? 'Welcome Back' : 'Join Our Sacred Garden'}
             </h1>
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-gray-300">
               {isLogin 
                 ? 'Continue your spiritual plant journey' 
                 : 'Begin your journey with nature\'s wisdom'
@@ -170,12 +169,12 @@ const Auth = () => {
             </form>
 
             <div className="mt-6 text-center">
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-300">
                 {isLogin ? "Don't have an account?" : "Already have an account?"}
                 <Button
                   variant="link"
                   onClick={() => setIsLogin(!isLogin)}
-                  className="text-primary hover:text-primary/80"
+                  className="text-primary dark:text-accent hover:text-primary/80 dark:hover:text-accent/80"
                   disabled={isSubmitting}
                 >
                   {isLogin ? 'Sign up' : 'Sign in'}
