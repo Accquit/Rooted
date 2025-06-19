@@ -30,7 +30,7 @@ const PlantOfTheDayModal = ({ open, onClose, parentRef }: { open: boolean; onClo
         >
           &times;
         </button>
-        <img src="/plant.png" alt="Plant of the Day" className="w-40 h-40 object-contain mx-auto mb-4" />
+        <img src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=400&h=400&fit=crop&crop=center" alt="Plant of the Day" className="w-40 h-40 object-contain mx-auto mb-4" />
         <h3 className="text-2xl font-serif text-primary dark:text-white mb-2 text-center">Plant of the Day</h3>
         <p className="text-center text-gray-700 dark:text-gray-300 mb-2">Peace Lily</p>
         <p className="text-center text-gray-600 dark:text-gray-400">A symbol of peace and harmony, the Peace Lily purifies air and brings calm to your space. Water when soil is dry and keep in indirect light.</p>

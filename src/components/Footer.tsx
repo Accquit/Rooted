@@ -58,7 +58,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
           <p className="text-gray-400 text-sm">
-            © 2024 Rooted. All rights reserved. Grow where you're planted. 🌱
+            © 2025 Rooted. All rights reserved. Bring nature home. 🌱
           </p>
         </div>
       </div>

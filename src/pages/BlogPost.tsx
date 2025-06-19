@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import { Badge } from '@/components/ui/badge';
@@ -68,6 +67,49 @@ const BlogPost = () => {
 
   const post = blogPosts[slug as keyof typeof blogPosts];
 
+  // Like state (persisted per post in localStorage)
+  const [liked, setLiked] = useState(false);
+  const [likeCount, setLikeCount] = useState(0);
+
+  useEffect(() => {
+    if (!slug) return;
+    setLiked(localStorage.getItem(`blog-like-${slug}`) === 'true');
+    const storedCount = localStorage.getItem(`blog-like-count-${slug}`);
+    setLikeCount(storedCount ? parseInt(storedCount, 10) : 0);
+  }, [slug]);
+
+  const handleLike = () => {
+    if (!slug) return;
+    const newLiked = !liked;
+    setLiked(newLiked);
+    const newCount = likeCount + (newLiked ? 1 : -1);
+    setLikeCount(newCount);
+    localStorage.setItem(`blog-like-${slug}` , newLiked ? 'true' : 'false');
+    localStorage.setItem(`blog-like-count-${slug}`, newCount.toString());
+  };
+
+  const handleShare = async () => {
+    const url = window.location.href;
+    const shareData = {
+      title: post?.title || 'Whispering Leaves',
+      url,
+    };
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (e) {
+        // user cancelled
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(url);
+        alert('Link copied to clipboard!');
+      } catch {
+        alert('Could not copy link.');
+      }
+    }
+  };
+
   if (!post) {
     return (
       <Layout>
@@ -119,11 +161,11 @@ const BlogPost = () => {
               </div>
 
               <div className="flex items-center space-x-4 mb-8">
-                <Button variant="outline" size="sm">
-                  <Heart className="h-4 w-4 mr-2" />
-                  Like
+                <Button variant={liked ? 'default' : 'outline'} size="sm" onClick={handleLike} aria-pressed={liked} aria-label="Like this post">
+                  <Heart className={`h-4 w-4 mr-2 ${liked ? 'fill-red-500 text-red-500' : ''}`} />
+                  Like{likeCount > 0 && <span className="ml-1">({likeCount})</span>}
                 </Button>
-                <Button variant="outline" size="sm">
+                <Button variant="outline" size="sm" onClick={handleShare} aria-label="Share this post">
                   <Share2 className="h-4 w-4 mr-2" />
                   Share
                 </Button>

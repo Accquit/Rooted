@@ -4,22 +4,22 @@ import { Star } from 'lucide-react';
 const TestimonialsSection = () => {
   const testimonials = [
     {
-      name: "Sarah M.",
-      location: "Los Angeles, CA",
+      name: "Raj",
+      location: "Bombay",
       text: "The quiz matched me with a snake plant that has completely transformed my bedroom's energy. I sleep so much better now!",
       rating: 5,
       plant: "Snake Plant"
     },
     {
-      name: "Michael T.",
-      location: "Portland, OR", 
+      name: "Raju",
+      location: "Delhi", 
       text: "Rooted didn't just sell me a plant - they helped me find a living meditation partner. My monstera and I start each day together.",
       rating: 5,
       plant: "Monstera Deliciosa"
     },
     {
-      name: "Luna R.",
-      location: "Austin, TX",
+      name: "Rajesh",
+      location: "Chennai",
       text: "The care guides feel like spiritual practice. My plants are thriving and so is my connection to nature.",
       rating: 5,
       plant: "Peace Lily"
