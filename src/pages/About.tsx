@@ -40,7 +40,7 @@ const About = () => {
       bio: ""
     },
     {
-      name: "Yashavi Jaswsal",
+      name: "Yashasvi Jaiswal",
       team: "Zeal",
       image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=300&h=300&fit=crop&crop=center",
       bio: ""
